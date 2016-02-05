@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+         <th>Id</th>
+         <th>Question</th>
+         <th>Status</th>
+         <th>Auteur</th>
+         <th>Date de création</th>
+      </tr>
+     </thead>
+     <tbody>
+         {% for text in texts %}
+         <tr>
+            <td>{{ text.id }}</td>
+            <td>{{ text.text }}</td>
+            <td>{{ text.status }}</td>
+            <td>{{ text.author }}</td>
+            <td>{{ text.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
