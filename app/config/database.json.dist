@@ -1,0 +1,8 @@
+{
+  "driver" : "pdo_mysql",
+  "host" : "127.0.0.1",
+  "dbname" : "fly_text",
+  "user" : "user",
+  "password" : "12345789",
+  "charset" : "utf8mb4"
+}
