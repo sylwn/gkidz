@@ -2,9 +2,11 @@
 
 {% block body%}
 <div id="display">
-    {% if(text) %}
-        <div id="fly-text" data-id="{{text.id}}" class="fly-text">{{text.text}}<div>
-    {% endif %}
+        <div id="fly-text" data-id="{% if(text) %}{{text.id}}{% endif %}" class="fly-text">
+            {% if(text) %}
+                {{text.text}}
+            {% endif %}
+        <div>
 </div>
 
 <script>
