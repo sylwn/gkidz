@@ -6,6 +6,7 @@
          <th>Status</th>
          <th>Auteur</th>
          <th>Date de création</th>
+         <th>Action</th>
       </tr>
      </thead>
      <tbody>
@@ -16,6 +17,16 @@
             <td>{{ text.status }}</td>
             <td>{{ text.author }}</td>
             <td>{{ text.created_at }}</td>
+            <td>
+                {%if (text.status == 'pending')%}
+                    <a href="{{ path('accept', {id: text.id}) }}">Accepter</a>
+                    <a href="{{ path('refuse', {id: text.id}) }}">Refuser</a>
+                {%endif%}
+
+                {%if (text.status == 'accepted')%}
+                    <a href="{{ path('archive', {id: text.id}) }}">Archiver</a>
+                {%endif%}
+            </td>
         </tr>
         {% endfor %}
       </tbody>
