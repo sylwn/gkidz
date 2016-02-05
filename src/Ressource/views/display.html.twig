@@ -3,7 +3,27 @@
 {% block body%}
 <div id="display">
     {% if(text) %}
-        <div id="fly-text-{{text.id}}" class="fly-text">{{text.text}}<div>
+        <div id="fly-text" data-id="{{text.id}}" class="fly-text">{{text.text}}<div>
     {% endif %}
 </div>
+
+<script>
+    setInterval(function(){
+        $.ajax({
+            url: "/",
+            success: function(text){
+                console.log('Attr: ' + $("#fly-text").attr('data-id'));
+                console.log('From db: ' +text.id);
+                console.log(text);
+
+                if(text && $("#fly-text").attr('data-id') != text.id){
+                    $("#fly-text").fadeOut("slow", function(){
+                        $(this).attr('data-id', text.id);
+                        $(this).html(text.text).fadeIn('slow');
+                    });
+                }
+            }
+        });
+    }, 3000);
+</script>
 {% endblock body%}

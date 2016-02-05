@@ -25,6 +25,10 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 $app->get('/', function(Request $request) use ($app) {
     $text = $app['db']->fetchAssoc("select t.* from text t where t.status = 'accepted' order by t.created_at asc limit 1");
+    if($request->isXmlHttpRequest()) {
+         return $app->json($text);
+    }
+
     return $app['twig']->render('display.html.twig', array('text' => $text));
 })
 ->bind('display');
