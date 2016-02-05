@@ -14,10 +14,6 @@
         $.ajax({
             url: "/",
             success: function(text){
-                console.log('Attr: ' + $("#fly-text").attr('data-id'));
-                console.log('From db: ' +text.id);
-                console.log(text);
-
                 if(text && $("#fly-text").attr('data-id') != text.id){
                     $("#fly-text").fadeOut("slow", function(){
                         $(this).attr('data-id', text.id);
