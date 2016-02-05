@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block body%}
+<div id="display">
+    {% if(text) %}
+        <div id="fly-text-{{text.id}}" class="fly-text">{{text.text}}<div>
+    {% endif %}
+</div>
+{% endblock body%}
