@@ -2,9 +2,16 @@
 
 
 {% block body%}
-<form action="#" method="post">
-    {{ form_widget(form) }}
-
-    <input type="submit" name="submit" />
-</form>
+<div id="question">
+    <div class="form">
+        <img src="/images/couple.png" />
+        <h4>Sexualité & fréquentation</h4>
+        <form action="#" method="post">
+            {{ form_widget(form.text, {'attr': {'placeholder': 'Pose ta question...'}}) }}
+            {{ form_widget(form) }}
+            <br />
+            <button>Envoyer</button>
+        </form>
+    </div>
+</div>
 {% endblock body%}

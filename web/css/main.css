@@ -19,3 +19,20 @@ html, body{
   vertical-align: middle;
   font-size: 7em;
 }
+
+#question {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background-color: #a41725;
+}
+
+#question .form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#question .form h4 {
+  color: white;
+}
