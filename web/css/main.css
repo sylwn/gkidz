@@ -31,8 +31,22 @@ html, body{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  padding: 1em;
+}
+
+#question .form textarea{
+  font-size: 5em;
+  min-height: 12em;
+  width: 100%;
+}
+#question .form button{
+  min-height: 3em;
+  font-size: 5em;
+  padding: 0 1em 0 1em;
+  width: 100%;
 }
 
 #question .form h4 {
   color: white;
+  font-size: 5em;
 }
