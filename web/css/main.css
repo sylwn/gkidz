@@ -50,3 +50,11 @@ html, body{
   color: white;
   font-size: 5em;
 }
+
+#question .form .success {
+  color: white;
+  font-size: 3em;
+}
+#question .form #thumb {
+  height: 1em;
+}

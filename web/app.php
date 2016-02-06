@@ -22,6 +22,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider());
 
 $app->get('/', function(Request $request) use ($app) {
     $text = $app['db']->fetchAssoc("select t.* from text t where t.status = 'accepted' order by t.created_at asc limit 1");
@@ -59,6 +60,7 @@ $app->post('/question', function(Request $request) use($app) {
         $data['status'] = 'pending';
 
         $app['db']->insert('text', $data);
+        $app['session']->getFlashBag()->add('message', 'Ta question a bien été envoyée');
         return $app->redirect('/question');
     }
 
