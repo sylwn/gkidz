@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+
+{% block body%}
+<div id="question">
+    <div class="form">
+        <h4>Éditer la fiche de l'enfant</h4>
+        <hr />
+        {% for message in app.session.getFlashBag.get('message') %}
+        <div class="success">
+            {{ message }} <img id="thumb" src='/images/thumb-up.png' />
+        </div>
+        {% endfor %}
+        <br />
+            
+        <form action="#" method="post">
+            <div class="form-group">
+              <label>Prénom</label>
+              {{ form_widget(form.firstname, {'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+              <label>Nom</label>
+              {{ form_widget(form.lastname, {'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+              <label>Date de naissance</label>
+              {{ form_widget(form.birthday, {'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+              <label>Sex</label>
+              {{ form_widget(form.gender, {'attr': {'class': 'form-gcontrol'} }) }}
+            </div>
+            {{ form_rest(form) }}
+            <button class="btn btn-primary btn-lg">Envoyer</button>
+        </form>
+          
+          {{ form_errors(form) }}
+    </div>
+</div>
+{% endblock body%}

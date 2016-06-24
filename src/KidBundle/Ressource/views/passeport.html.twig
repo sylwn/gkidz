@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body%}
+    <table>
+        <thead>
+          <tr>
+             <th>#</th>
+             <th>Nom</th>
+             <th>Prénom</th>
+             <th>Age</th>
+             <th></th>
+          </tr>
+         </thead>
+         <tbody>
+             {% for kid in kidz %}
+             <tr>
+                <td>{{ kid.id }}</td>
+                <td>{{ kid.lastname }}</td>
+                <td>{{ kid.firstname }}</td>
+                <td>{{ kid.birthday }}</td>
+                <td>
+
+                    <a class="btn btn-default" href="{{ path('edit', {id: kid.id}) }}">Editer</a>
+                </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+{% endblock body%}
