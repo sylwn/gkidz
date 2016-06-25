@@ -101,6 +101,6 @@ $app->get('/kidz/passeports', function()  use ($app) {
     
     return $app['twig']->render('passeport.html.twig', array('kidz' => $kidz));
 })
-->bind('list');
+->bind('passeport');
 
 $app->run();

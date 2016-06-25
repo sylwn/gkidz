@@ -1,29 +1,53 @@
 {% extends "base.html.twig" %}
 
 {% block body%}
-    <table>
-        <thead>
-          <tr>
-             <th>#</th>
-             <th>Nom</th>
-             <th>Prénom</th>
-             <th>Age</th>
-             <th></th>
-          </tr>
-         </thead>
-         <tbody>
-             {% for kid in kidz %}
-             <tr>
-                <td>{{ kid.id }}</td>
-                <td>{{ kid.lastname }}</td>
-                <td>{{ kid.firstname }}</td>
-                <td>{{ kid.birthday }}</td>
-                <td>
+    <div style=" overflow: hidden; width: 850px;">
+        {% for kid in kidz %}
+            <div style="width: 410px; float: left; padding: 10px; page-break-inside: avoid; ">
+                <div style="width: 410px; height: 199px; float: left; padding: 10px; border: dashed 1px; ">
+                    <div style="float: left; margin-top: 33px; ">
+                        <img height="100px" src="/images/male-placeholder.jpg" />
+                    </div>
+                    <div style="float: left;">
+                        <table style="float: left; width: 280px; font-size: 12px; margin-left: 10px;">
+                            <tr>
+                                <td style="text-align: center; font-size: 19px;"><span style="font-weight: bold;">Passeport</span></td>
+                            </tr>
+                            <tr >
+                                <td><span style="font-weight: bold;">Nom:</span> {{ kid.lastname }}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Prénom:</span> {{ kid.firstname }}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Date de naissance:</span> {{ kid.birthday | date('Y-m-d')}}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Genre:</span> {{ kid.gender | upper}}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Délivré à:</span> 1455 Avenue Papineau, Montréal, QC H2K 4H5</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Valide jusqu'au:</span> 2016-06-25</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="float: left; font-size: 9px; font-style:oblique; margin-top: 7px; ">
+                        *Ce document a été émis par l'organisation GospelKidz. Il doit être utilisé dans la zone ecclésiastique et ne permet pas la sortie du territoire Canadien.
+                    </div>
+                </div>
+                <div style="width: 410px; height: 199px; float: left; padding: 9px; border: dashed 1px; ">
+                    <table style="margin-top: 5px; float: left;">
+                        <tr><td><img height="100px" src="/images/qr.jpg" /></td></tr>
+                        <tr><td style="padding-top: 15px;"><img height="45px" src="/images/signature.png" /></td></tr>
+                    </table>
+                    <div style="float: left; font-size: 125px; margin-left: 30px; color: #E0E0E0">
+                        GK
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
-                    <a class="btn btn-default" href="{{ path('edit', {id: kid.id}) }}">Editer</a>
-                </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-    </table>
 {% endblock body%}
