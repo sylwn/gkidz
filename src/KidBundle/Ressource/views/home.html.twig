@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+
+{% block body%}
+    <ul>
+        <li><a class="btn btn-default" href="{{ path('passeport') }}">Passeports</a></li>
+        <li><a class="btn btn-default" href="{{ path('list') }}">Liste des enfants</a></li>
+        <li><a class="btn btn-default" href="{{ path('add') }}">Ajouter un enfant</a></li>
+    </ul>
+{% endblock body%}

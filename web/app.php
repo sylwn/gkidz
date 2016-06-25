@@ -41,6 +41,11 @@ $getForm = function ($data = null) use ($app) {
     return $form;
 };
 
+$app->get('/', function() use ($app, $getForm) {
+    $form = $getForm();
+    return $app['twig']->render('home.html.twig', array('form' => $form->createView()));
+})->bind('home');
+
 $app->get('/kidz/add', function() use ($app, $getForm) {
     $form = $getForm();
     return $app['twig']->render('add.html.twig', array('form' => $form->createView()));
