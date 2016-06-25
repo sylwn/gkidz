@@ -6,18 +6,18 @@
             <div style="width: 410px; float: left; padding: 10px; page-break-inside: avoid; ">
                 <div style="width: 410px; height: 199px; float: left; padding: 10px; border: dashed 1px; ">
                     <div style="float: left; margin-top: 33px; ">
-                        <img height="100px" src="/images/male-placeholder.jpg" />
+                        <img style="max-height: 120px; max-width: 90px;" src="{{kid.picture}}" />
                     </div>
                     <div style="float: left;">
                         <table style="float: left; width: 280px; font-size: 12px; margin-left: 10px;">
                             <tr>
                                 <td style="text-align: center; font-size: 19px;"><span style="font-weight: bold;">Passeport</span></td>
                             </tr>
-                            <tr >
-                                <td><span style="font-weight: bold;">Nom:</span> {{ kid.lastname }}</td>
-                            </tr>
                             <tr>
                                 <td><span style="font-weight: bold;">Prénom:</span> {{ kid.firstname }}</td>
+                            </tr>
+                            <tr>
+                                <td><span style="font-weight: bold;">Nom:</span> {{ kid.lastname }}</td>
                             </tr>
                             <tr>
                                 <td><span style="font-weight: bold;">Date de naissance:</span> {{ kid.birthday | date('Y-m-d')}}</td>

@@ -13,7 +13,7 @@
         {% endfor %}
         <br />
             
-        <form action="#" method="post">
+        <form action="#" method="post" enctype="multipart/form-data" novalidate >
             <div class="form-group">
               <label>Prénom</label>
               {{ form_widget(form.firstname, {'attr': {'class': 'form-control'} }) }}
@@ -22,13 +22,17 @@
               <label>Nom</label>
               {{ form_widget(form.lastname, {'attr': {'class': 'form-control'} }) }}
             </div>
-            <div class="form-group">
+            <div >
               <label>Date de naissance</label>
               {{ form_widget(form.birthday, {'attr': {'class': 'form-control'} }) }}
             </div>
             <div class="form-group">
-              <label>Sex</label>
+              <label>Gender</label>
               {{ form_widget(form.gender, {'attr': {'class': 'form-gcontrol'} }) }}
+            </div>
+            <div class="form-group">
+              <label>Picture</label>
+              {{ form_widget(form.picture, {'attr': {'class': 'form-gcontrol'} }) }}
             </div>
             {{ form_rest(form) }}
             <button class="btn btn-primary btn-lg">Envoyer</button>

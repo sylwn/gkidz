@@ -21,6 +21,7 @@
                 <td>{{ kid.birthday }}</td>
                 <td>
                     <a class="btn btn-default" href="{{ path('edit', {id: kid.id}) }}">Editer</a>
+                    <a class="btn btn-default" href="{{ path('disable', {id: kid.id}) }}">Disable</a>
                 </td>
             </tr>
             {% endfor %}
