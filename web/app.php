@@ -24,10 +24,12 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 
 $getForm = function ($data = null) use ($app) {
+    
+    $years = range(2016, 1980); 
     $form = $app['form.factory']->createBuilder('form', $data)
             ->add('firstname', 'text')
             ->add('lastname', 'text')
-            ->add('birthday', 'date')
+            ->add('birthday', 'date', array('years' => $years))
             ->add('gender', 'choice', array(
                 'choices' => array('m' => 'Garçon', 'f' => 'Fille'),
                 'expanded' => true
